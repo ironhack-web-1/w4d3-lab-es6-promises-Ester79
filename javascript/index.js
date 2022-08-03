@@ -42,6 +42,7 @@ getInstruction('mashedPotatoes', 0, (step0) => {
         getInstruction('mashedPotatoes', 4, (step0) => {
           document.querySelector("#mashedPotatoes").innerHTML += `<li>${step0}</li>`
           document.querySelector("#mashedPotatoes").innerHTML += `<li>${lastStep}</li>`
+          document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
         });
       });
     });
@@ -83,7 +84,9 @@ obtainInstruction('steak', 0)
 })
 .then(() => {
   document.querySelector("#steak").innerHTML += `<li>${finalMessage}</li>`;
+  document.querySelector("#steakImg").removeAttribute("hidden");
 });
+
 
 
 
@@ -95,6 +98,7 @@ async function makeBroccoli(){
   document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`
   }
   document.querySelector("#broccoli").innerHTML += `<li>${finalMessage}</li>`
+  document.querySelector("#broccoliImg").removeAttribute("hidden");
 }
 
 makeBroccoli();
