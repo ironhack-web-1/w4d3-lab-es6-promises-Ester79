@@ -106,4 +106,24 @@ makeBroccoli();
 
 
 // Bonus 2 - Promise all
-// ...
+function brusselsSteps(){
+  let promises = [];
+  let finalMessage = "Brussels sprouts are ready!"
+  for(let i= 0; i < brusselsSprouts.length; i++){
+   
+    let stepsBrussels = new Promise((resolve, reject) =>{
+      setTimeout(() => resolve(brusselsSprouts[i]), 1000);
+    })
+    promises.push(stepsBrussels);
+  }
+  Promise.all(promises)
+  .then((values)=> values.forEach(value => document.querySelector("#brusselsSprouts").innerHTML += `<li>${value}</li>`) )
+  .then(()=> {
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${finalMessage}</li>`
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+  })
+}
+
+brusselsSteps();
+  
+
